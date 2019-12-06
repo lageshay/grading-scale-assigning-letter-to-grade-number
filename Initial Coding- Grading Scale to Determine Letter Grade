@@ -1,0 +1,35 @@
+#Prompts user to enter a score
+score = input('Enter Score: ')
+
+#Tries to convert the input to a float number
+#If a string is entered, a message requests a number, and will end the program
+try: 
+    score_num = float(score)
+except: 
+    print('Error, please enter a numeric input')
+    quit()
+
+#Reads if the number entered is outside the high end of the range
+#If greater than 1.0, a message requests a number within the range and quits
+if score_num > 1.0:
+    print('Please enter a numeric number between 0.0 and 1.0')
+    quit()
+
+#Reads if the number entered is outside the lower end of the range
+#If less than 0.0, a message requests a number within the range and quits
+if score_num < 0.0:
+    print('Please enter a numeric number between 0.0 and 1.0')
+    quit()
+
+#When a number within the range is entered and can convert to a float number
+#it compares to the below scale, starting with the highest value for >= 
+if score_num >= 0.9:
+	print('A')
+elif score_num >= 0.8:
+	print('B')
+elif score_num >= 0.7:
+	print('C')
+elif score_num >= 0.6:
+	print('D')
+elif score_num < 0.6:
+	print('F')
